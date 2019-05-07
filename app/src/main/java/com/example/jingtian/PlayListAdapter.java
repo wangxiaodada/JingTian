@@ -32,7 +32,7 @@ public class PlayListAdapter extends RecyclerView.Adapter<PlayListAdapter.PlayVi
      */
     @Override
     public void onBindViewHolder(@NonNull PlayViewHolder holder, int position) {
-        String name="美丽心灵";
+        String name=PlayLab.get().getPlay(position);
         holder.bind(name);
 
     }
@@ -43,7 +43,7 @@ public class PlayListAdapter extends RecyclerView.Adapter<PlayListAdapter.PlayVi
      */
     @Override
     public int getItemCount() {
-        return 5;
+        return PlayLab.get().getSize();
     }
 
     //内部类，应与播放刚布局XML对应

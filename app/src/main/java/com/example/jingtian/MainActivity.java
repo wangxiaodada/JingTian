@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.play_List);
+        setContentView(R.layout.play_list);
 
         playList=findViewById(R.id.playList);
         playAdapter=new PlayListAdapter();
