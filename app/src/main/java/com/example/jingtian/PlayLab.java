@@ -8,18 +8,19 @@ import java.util.List;
  */
 public class PlayLab {
     private static PlayLab instance= null;
-    private List<String>plays;
+    private List<String> plays;
+
     /**
      * 让构造方法称为私有，避免外部调用
      */
-    private PlayLab(){
+    public PlayLab(){
         init();
     }
     /**
      * 此方法指挥返回同一个实例，不会创建新的实例。
      * @retuen 单例，表示频道仓库
      */
-    public static PlayLab get(){
+    public static PlayLab getP(){
         if (null == instance){
             instance = new PlayLab();
         }
@@ -30,7 +31,7 @@ public class PlayLab {
      * 返回此仓库中有几个频道
      * @return 频道数量，整数
      */
-    public  int getSize(){
+    public int getSizeP(){
         return plays.size();
     }
 
@@ -48,10 +49,23 @@ public class PlayLab {
      */
     private void init(){
         plays = new ArrayList<>();
-        plays.add("美丽心灵");
-        plays.add("sss");
-        plays.add("aaa");
-        plays.add("xxx");
-        plays.add("vvv");
+        plays.add("测试频道");
+        plays.add("CCTV1");
+        plays.add("CCTV2");
+        plays.add("CCTV3");
+        plays.add("CCTV4");
+        plays.add("CCTV5");
+        plays.add("CCTV5+");
+        plays.add("CCTV6");
+        plays.add("CCTV7");
+        plays.add("CCTV8");
+        plays.add("CCTV9");
+        plays.add("CCTV10");
+        plays.add("CCTV11");
+        plays.add("CCTV12");
+        plays.add("CCTV13");
+        plays.add("CCTV15");
+
+
     }
 }
