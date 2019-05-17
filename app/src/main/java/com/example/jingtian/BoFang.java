@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.exoplayer2.ExoPlayerFactory;
 import com.google.android.exoplayer2.SimpleExoPlayer;
+import com.google.android.exoplayer2.source.MediaSource;
 import com.google.android.exoplayer2.source.hls.HlsMediaSource;
 import com.google.android.exoplayer2.ui.PlayerView;
 import com.google.android.exoplayer2.upstream.DataSource;
@@ -49,9 +50,9 @@ public class BoFang  extends AppCompatActivity {
         player.setPlayWhenReady(true);
         playerView.setPlayer(player);
         DataSource.Factory factory = new DefaultDataSourceFactory(this,"J");
-        HlsMediaSource source = new HlsMediaSource.Factory(factory).createMediaSource(mUri(channel.getUrl()));
+        MediaSource mediaSource = new HlsMediaSource.Factory(factory).createMediaSource(mUri(channel.getUrl()));
 
-        player.prepare(source);
+        player.prepare(mediaSource);
 
 
 
@@ -85,11 +86,13 @@ public class BoFang  extends AppCompatActivity {
     @Override
     protected void onResume(){
         super.onResume();
+        releasePlayer();
         Log.i(TAG,"onresume");
     }
     @Override
     protected void onPause(){
         super.onPause();
+        releasePlayer();
         Log.i(TAG,"onpause");
     }
     @Override
